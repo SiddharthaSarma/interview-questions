@@ -1,7 +1,6 @@
 function permutation(inputArr) {
   var result = [];
-  var i = 1;
-
+  
   function permute(arr, mem = []) {
     if (!arr.length) {
       result.push(mem);
