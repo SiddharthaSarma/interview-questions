@@ -1,20 +1,20 @@
 const obj = {
-  A: '1',
+  A: "1",
   B: null,
   C: {
     D: {
-      E: 'test'
+      E: "test",
     },
     F: {
       G: {
-        J: 'hello',
-        K: 'abcd'
-      }
-    }
+        J: "hello",
+        K: "abcd",
+      },
+    },
   },
   H: {
-    I: [10, 20]
-  }
+    I: [10, 20],
+  },
 };
 
 /*
@@ -27,12 +27,12 @@ const obj = {
   H.G.1: 20
 */
 
-function solution(input, prefix='') {
+function solution(input, prefix = "") {
   let result = {};
   for (const k in input) {
     const val = input[k];
-    if (val && typeof val === 'object') {
-      result = {...result, ...solution(input[k], k + '.' + prefix)};
+    if (val && typeof val === "object") {
+      result = { ...result, ...solution(input[k], k + "." + prefix) };
     } else {
       result[prefix + k] = val;
     }
